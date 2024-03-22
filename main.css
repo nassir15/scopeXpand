@@ -9,10 +9,11 @@ body{
     line-height: 1.6;
 }
 header{
-    padding: 5px;
+    padding: 10px 5px;
     background-color: rgb(86, 86, 231);
     border-radius: 5px;
-    position: sticky;
+    position: static;
+    top: 0;
     text-align: center;
     margin: 10px;
 }
@@ -25,51 +26,49 @@ h1{
 }
 nav ul{
     list-style-type:none;
+    padding: 0;
+    margin: 0;
+    text-align: center;
 }
 li{
     display: inline;
-    margin-right: 50px;
-    margin-left: 10px;
+    margin: 0 20px;
 }
 a{
     text-decoration: none;
     color: whitesmoke;
+    transition: color 0.3s, text-shadow 0.3s;
 }
 
 a:hover{
     color:black;
     text-decoration: underline;
-    box-shadow: 0px 0px 10px pink;
+    text-shadow: 0px 0px 10px pink;
 
 }
-/* @media screen and (max-width:600px) */
-
+@media screen and (max-width:600px)
+{
     #type1{
-        font-family: sans-serif;
         font-size: 30px;
-        text-align: center;
-        padding: 5px;
-    
     } 
+}
 
-/* @media screen and (max-width:600px) */
-
+@media screen and (max-width:600px)
+{
     .letterx{
-        font-size: 90px;
-        background-image: url(X2.jpg);
-        background-size:cover;
-        background-repeat: no-repeat;
-        background-position: center;
-        color: transparent;
-        background-clip: text;  
+        font-size: 60px; 
     }
-
-/* #type1{
+}
+#type1{
     font-family: sans-serif;
     font-size: 60px;
     text-align: center;
     padding: 5px;
 
+}
+.letterx-container {
+    display: inline-block;
+    perspective: 1000px; /* Add perspective to create a 3D effect */
 }
 .letterx{
     font-size: 150px;
@@ -78,9 +77,13 @@ a:hover{
     background-repeat: no-repeat;
     background-position: center;
     color: transparent;
-    background-clip: text;  
-} */
-
+    background-clip: text;
+    transition: transform 0.3s ease, box-shadow 0.3s ease ; 
+}
+.letterx-container:hover .letterx {
+    transform: scale(1.5) rotateY(30deg);
+    text-shadow:  0 10px 80px rgb(86, 86, 231);
+}
 .product1{
     justify-content: center;
     text-align: center;
@@ -104,71 +107,33 @@ a:hover{
     border-spacing: 10px;
     transition: 1s;
 }
-/* @media screen and (max-width:600px) */
 
-    .img1{
-        width: 50vh;
-        height: 50vh;
-        display:inline;
-        justify-content: center;
-        border-radius: 5px;
-        transform: scale(0.2);
-    }
-    .img2{
-        width:50vh;
-        height: 50vh;
-        display:inline;
-        justify-content: center;
-        border-radius: 5px;
-        transform: scale(0.2);
-    } 
-
-/* @media screen and (max-width:600px) */
-
-    .img1:hover{
-        transform:scale(0.3);
-        z-index: 2;
-    }
-    .img2:hover{
-        transform:scale(0.3);
-        z-index: 2;
-    } 
-
-/* .img1{
-    width: 50vh;
-    height: 50vh;
-    display:inline;
-    justify-content: center;
-    border-radius: 5px;
-    transform: scale(0.8);
-}
-.img2{
-    width:50vh;
-    height: 50vh;
-    display:inline;
-    justify-content: center;
+.img1, .img2 {
+    width: 25vh;
+    height: 25vh;
+    display: block;
+    margin: 0 auto; /* Center the images horizontally */
     border-radius: 5px;
     transform: scale(0.8);
 }
 
-.img1:hover{
-    transform:scale(0.9);
+.img1:hover, .img2:hover {
+    transform: scale(0.9);
     z-index: 2;
 }
-.img2:hover{
-    transform:scale(0.9);
-    z-index: 2;
-} */
 
 .textitems1{
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+    align-items: center;
     border-spacing: 10px;
 }
 .cart{
     background-color: grey;
     justify-items: center;
+    padding: 5px 10px; 
+    transition: all 0.3s ease; 
 }
 .cart:hover{
     background-color: black;
@@ -177,30 +142,14 @@ a:hover{
     z-index: 0;
 }
 /* profile icon */
-.profile1{
+.profile1,.profile2,.profile3,.profile4{
     width: 20px;
     height: 20px;
     margin-left: 20vh;
 }
-.profile2{
-    width: 20px;
-    height: 20px;
-    margin-left: 20vh;
-}
-.profile3{
-    width: 20px;
-    height: 20px;
-    margin-left: 20vh;
-}
-.profile4{
-    width: 20px;
-    height: 20px;
-    margin-left: 20vh;
-}
-/* profile icon */
 
 .contact1{
-    margin-left: 120px;
+    margin-left: 10vw;
 }
 
 .footer{
